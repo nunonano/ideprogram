@@ -37,7 +37,7 @@ class="selected"
 													</ul>
 												</div>
 											</div>
-											<p>	{!! Markdown::parse(str_limit($post->content, 300)) !!}
+											<p>	{!! Markdown::parse(str_limit($post->preview_content, 300)) !!}
 												<a class="read-more" href="{{ route('blog.show', $post->slug) }}">Read more</a> 
 											</p>
 									    </article>
