@@ -34,6 +34,7 @@ require __DIR__.'/framework/bootstrap/autoload.php';
 
 $app = require_once __DIR__.'/framework/bootstrap/app.php';
 
+/*setting public path baru*/
 $app->bind('path.public', function() {
     return __DIR__;
 });
