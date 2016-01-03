@@ -104,7 +104,7 @@
 						    <div class="cell-9 top-menu">
 							    
 							    <!-- # letak Sidebar -->
-						    	{{-- @include('frontend.menu') --}}
+						    	@include('frontend.menu')
 							    							    
 							    <!-- top search start -->
 							    <div class="top-search">
@@ -134,6 +134,7 @@
 						<div class="row">
 							<div class="cell-12">
 								<!-- <h1 class="fx" data-animate="fadeInLeft">Blog <span>Thumbnails</span></h1> -->
+								@yield('header')
 								@yield('breadcrumb')
 								
 							</div>

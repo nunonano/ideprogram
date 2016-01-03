@@ -11,6 +11,17 @@
 <meta property="og:description" content="{{ $post->meta_description }}"/>
 @stop
 
+
+@section('menuartikel')
+class="selected"
+@stop
+
+
+@section('header')
+<h1 class="fx" data-animate="fadeInLeft">Artikel</h1>
+@stop		
+
+
 @section('breadcrumb')
 								<div class="breadcrumbs main-bg fx" data-animate="fadeInUp">
 									<span class="bold">You Are In:</span><a href="{{ route('blog.index') }}">Home</a><span class="line-separate">/</span>

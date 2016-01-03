@@ -1,4 +1,13 @@
-@extends('frontend.layout')							
+@extends('frontend.layout')
+
+@section('menuhome')
+class="selected"
+@stop
+
+@section('header')
+<h1 class="fx" data-animate="fadeInLeft">Home</h1>
+@stop		
+
 @section('main')
 							
 							    <div class="blog-posts">
