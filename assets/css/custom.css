@@ -1,0 +1,9 @@
+/* Spoiler  dengan JQuery  */ 
+blockquote { font:normal normal 11px/16px Verdana,Arial,Sans-Serif; color:#666; border:2px dashed #cec2c2; background-color:#eee2e2; padding:18px 20px; -webkit-box-shadow:inset 0px 0px 7px #222; -moz-box-shadow:inset 0px 0px 7px #222; box-shadow:inset 0px 0px 7px #222; margin:0px 30px 15px; /* overflow:auto; height:250px; (opsional) */ } 
+button.sp-trigger { display:block; outline:none; cursor:pointer; margin:20px 0px 10px 30px; border:none; background-color:green; font:bold 11px Verdana,Arial,Sans-Serif; color:white; text-shadow:0px 1px 0px rgba(0,0,0,0.4); padding:5px 10px; -webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px; -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.4); -moz-box-shadow:0px 1px 2px rgba(0,0,0,0.4); box-shadow:0px 1px 2px rgba(0,0,0,0.4); } 
+button.sp-trigger.sp-active {background-color:#981515}
+/* Spoiler  posisi tengah  */
+blockquote{
+		text-align: center;
+	vertical-align: middle;
+}

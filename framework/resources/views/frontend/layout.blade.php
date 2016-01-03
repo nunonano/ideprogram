@@ -35,7 +35,9 @@
 		
 		<!-- Skin style (** you can change the link below with the one you need from skins folder in the css folder **) -->
 		<link rel="stylesheet" href="{{ asset('assets/css/skins/default.css') }}">
-	
+
+
+
 	</head>
 	<body>
 	    
@@ -219,5 +221,20 @@
 		
 		<!-- general script file -->
 		<script type="text/javascript" src="{{ asset('assets/js/script.js') }}"></script>
+
+		<!-- Spoiler dengan JQuery -->
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		//<![CDATA[
+		$(function() {
+		$('blockquote').hide(1000).before('<button class="sp-trigger">Lihat Konten</button>');
+		$('button.sp-trigger').toggle(function() {
+		$(this).addClass('sp-active').text('Tutup').next().slideDown(1000);}, function() {
+		$(this).removeClass('sp-active').text('Lihat Konten').next().slideUp(1000);});
+		});
+		//]]>
+		</script>
+		
 	</body>
 </html>
