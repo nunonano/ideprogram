@@ -1,4 +1,4 @@
-@extends('Frontend/layout')	
+@extends('frontend.layout')	
 
 @section('meta')
 <meta name="title" content="{{ $post->title }}">

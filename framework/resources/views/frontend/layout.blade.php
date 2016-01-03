@@ -104,7 +104,7 @@
 						    <div class="cell-9 top-menu">
 							    
 							    <!-- # letak Sidebar -->
-						    	{{-- @include('Frontend/menu') --}}
+						    	{{-- @include('frontend.menu') --}}
 							    							    
 							    <!-- top search start -->
 							    <div class="top-search">
@@ -152,7 +152,7 @@
 							</div>
 
 						    <!-- # letak Sidebar -->
-						    @include('Frontend/sidebar')
+						    @include('frontend.sidebar')
 
 			    		</div>
 					</div>
@@ -162,7 +162,7 @@
 			<!-- Content End -->
 			
 			<!-- # letak Footer -->
-			@include('Frontend/footer')	
+			@include('frontend.footer')	
 
 			<!-- # Script tambahan -->
 			@yield('foot')		
