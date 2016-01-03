@@ -205,7 +205,7 @@
 		<script type="text/javascript" src="{{ asset('assets/js/jquery.placeholder.js') }}"></script>
 		
 		<!-- Tweeter API plugin -->
-		<!--<script type="text/javascript" src="{{ asset('assets/js/twitterfeed.js') }}"></script>-->
+		<script type="text/javascript" src="{{ asset('assets/js/twitterfeed.js') }}"></script>
 		
 		<!-- Flickr API plugin -->
 		<script type="text/javascript" src="{{ asset('assets/js/jflickrfeed.min.js') }}"></script>

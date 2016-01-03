@@ -7,10 +7,9 @@
 						    <div class="cell-3">
 							    <h3 class="block-head">Main Menu</h3>
 							    <ul class="footer-menu">
-								    <li><a href="home.html">Home Page</a></li>
-								    <li><a href="about-us.html">About Me</a></li>
-								    <li><a href="blog.html">My Blog</a></li>
-								    <li><a href="portfolio-4-cols.html">My Portfolio</a></li>
+								    <li><a href="ideprogram.xyz">Home Page</a></li>
+								    <li><a href="#">About Me</a></li>
+								    <li><a href="wisnusaputra.xyz">My Portfolio</a></li>
 								    <!-- <li><a href="FAQ.html">FAQ</a></li> -->
 							    </ul>
 						    </div>
@@ -20,16 +19,9 @@
 						    <div class="cell-3">
 							    <h3 class="block-head">Tag Cloud</h3>
 							    <div class="tags">
-							    	<a href="#">Design</a>
-							    	<a href="#">User interface</a>
-							    	<a href="#">Performance</a>
-							    	<a href="#">Development</a>
-							    	<a href="#">WordPress</a>
-							    	<a href="#">SEO</a>
-							    	<a href="#">Joomla</a>
-							    	<a href="#">ASP.Net</a>
-							    	<a href="#">SharePoint</a>
-							    	<a href="#">Bootstrap</a>
+							    	@foreach($tags as $tag)
+										<a href="{{ route('blog.tag', $tag->slug) }}" style="font-size:{{ $tag->post->count() + 12 }}px">{{ $tag->name }}</a>
+									@endforeach
 							    </div>
 						    </div>
 						    <!-- Tags Cloud footer cell start -->
