@@ -3,12 +3,15 @@
 							
 							    <div class="blog-posts">
 							    	@forelse ($posts as $post)
+							    	<?php 
+							    		$tanggal = $post->created_at;
+							    	?>
 			                		<div class="post-item fx" data-animate="fadeInLeft">
 										<div class="post-image">
-											<a href="blog-single.html">
+											<a href="{{ route('blog.show', $post->slug) }}">
 												<div class="mask"></div>
 												<div class="post-lft-info">
-													<div class="main-bg">{{ $post->created_at }}</div>
+													<div class="main-bg">{{ date('d', strtotime($tanggal)) }}<br />{{ date('M', strtotime($tanggal)) }}<br />{{ date('Y', strtotime($tanggal)) }}</div>
 												</div>
 												<img src="{{ asset('assets/images/blog/small/1.jpg') }}" alt="Our Blog post image goes here">
 											</a>
@@ -20,13 +23,13 @@
 													<ul class="post-meta">
 														<li class="meta-user"><i class="fa fa-user"></i>By: <a href="#">{{ $post->user->display_name }}</a></li>
 														<li class="">Dilihat :{{ $post->view }} x</li>
-														<!-- <li><i class="fa fa-folder-open"></i>Category: <a href="#">#</a></li>
-														<li class="meta-comments"><i class="fa fa-comments"></i>Comments: <a href="blog-single.html">#</a></li> -->
+														<li><!-- <i class="fa fa-folder-open"></i>Category: <a href="#">#</a></li> -->
+														<li class="meta-comments"><i class="fa fa-comments"></i>Comments: <a href="blog-single.html">{{ $post->comment->count() }}</a></li>
 													</ul>
 												</div>
 											</div>
 											<p>	{!! Markdown::parse(str_limit($post->content, 300)) !!}
-												<a class="read-more" href="blog-single.html">Read more</a> 
+												<a class="read-more" href="{{ route('blog.show', $post->slug) }}">Read more</a> 
 											</p>
 									    </article>
 									</div>

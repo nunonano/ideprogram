@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>themelock.com - EXCEPTION – Responsive Business HTML Template</title>
+		<title>@yield('webTitle', $webSettings->web_title)</title>
 		<meta name="description" content="EXCEPTION – Responsive Business HTML Template">
 		<meta name="author" content="EXCEPTION">
 		
@@ -78,7 +78,7 @@
 						<div class="row">
 							<div class="cell-5">
 							    <ul>
-								    <li><a href="#"><i class="fa fa-envelope"></i>wisnu-saputra@outlook.com</a></li>
+								    <li><a href="{{ route('blog.index') }}"><i class="fa fa-envelope"></i>wisnu-saputra@outlook.com</a></li>
 								    <!-- <li><span><i class="fa fa-phone"></i> Call Us: +1 (888) 000-0000</span></li> -->
 							    </ul>
 							</div>
@@ -99,7 +99,7 @@
 				    <div class="container">
 					    <div class="row">
 					    	<div class="logo cell-3">
-						    	<a href="home.html" style="font-size: 32px;font-weight: bold;">ideProgram</a>
+						    	<a href="{{ route('blog.index') }}" style="font-size: 32px;font-weight: bold;">ideProgram</a>
 						    </div>
 						    <div class="cell-9 top-menu">
 							    
@@ -133,10 +133,9 @@
 					<div class="container">
 						<div class="row">
 							<div class="cell-12">
-								<h1 class="fx" data-animate="fadeInLeft">Blog <span>Thumbnails</span></h1>
-								<div class="breadcrumbs main-bg fx" data-animate="fadeInUp">
-									<span class="bold">You Are In:</span><a href="#">#</a><span class="line-separate">/</span><span>#</span>
-								</div>
+								<!-- <h1 class="fx" data-animate="fadeInLeft">Blog <span>Thumbnails</span></h1> -->
+								@yield('breadcrumb')
+								
 							</div>
 						</div>
 					</div>

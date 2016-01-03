@@ -88,7 +88,7 @@ header.top-head .logo a, .foot-logo {
 	/*background: transparent url('../../images/logo.png') no-repeat 50% 50%;*/
 }
 .footer-top-2 .foot-logo {
-    background: transparent url('../../images/logo.png') no-repeat;
+    /*background: transparent url('../../images/logo.png') no-repeat;*/
 }
 .head-style2 .top-head .logo a, .head-style3 .logo a {
 	background: transparent url('../../images/logo-white.png') no-repeat 50% 0 !important;

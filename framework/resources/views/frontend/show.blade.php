@@ -11,6 +11,13 @@
 <meta property="og:description" content="{{ $post->meta_description }}"/>
 @stop
 
+@section('breadcrumb')
+								<div class="breadcrumbs main-bg fx" data-animate="fadeInUp">
+									<span class="bold">You Are In:</span><a href="{{ route('blog.index') }}">Home</a><span class="line-separate">/</span>
+									<span>Articles</span>
+								</div>
+@stop
+
 @section('webTitle')
 @if(count($post) > 0)
 {{ $post->title }} | {{ $webSettings->web_title }}
@@ -20,12 +27,15 @@ Posting tidak ditemukan | {{ $webSettings->web_title }}
 @stop
 
 @section('main')
-@if(count($post) > 0)					
+@if(count($post) > 0)
+<?php 
+	$tanggal = $post->created_at;	
+?>					
 								<div class="blog-posts">
 			                		<div class="post-item fx" data-animate="fadeInLeft">
 										<div class="details-img">
 											<div class="post-lft-info">
-												<div class="main-bg">{{ $post->created_at }}<span class="tri-col"></span></div>
+												<div class="main-bg">{{ date('d M Y', strtotime($tanggal)) }}<span class="tri-col"></span></div>
 											</div>
 											<img src="{{ asset('assets/images/blog/1.jpg') }}" alt="Our Blog post image goes here">
 										</div>
@@ -67,7 +77,7 @@ Posting tidak ditemukan | {{ $webSettings->web_title }}
 									</div><!-- .post-item end -->
 									<div class="comments">
 										<h3 class="block-head">Comments</h3>
-										<p class="hint marginBottom bold">There are <span class="main-color">#</span> comments on this post</p>
+										<p class="hint marginBottom bold">There are <span class="main-color">{{ $post->comment->count() }}</span> comments on this post</p>
 									    <ul class="comment-list">
 									        <!--<li>
 									             <article class="comment">

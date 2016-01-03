@@ -16,6 +16,9 @@
 										<div class="widget-content">
 											<ul>
 												@foreach($recentPosts as $post)
+												<?php 
+							    					$tanggal = $post->created_at;							    				
+							    				?>
 												<li>
 													<div class="post-img">
 														<img src="{{ asset('assets/images/people/1.jpg') }}" alt="">
@@ -27,7 +30,7 @@
 															</a>
 														</h4>
 														<div class="meta">
-															<span><i class="fa fa-clock-o"></i>Dec 28, 2013,</span><a href="blog-single.html"><i class="fa fa-comments"></i>15</a>
+															<span><i class="fa fa-clock-o"></i>{{ date('M j, Y', strtotime($tanggal)) }}</span><a href="blog-single.html"><i class="fa fa-comments"></i>{{ $post->comment->count() }}</a>
 														</div>
 													</div>
 												</li>
