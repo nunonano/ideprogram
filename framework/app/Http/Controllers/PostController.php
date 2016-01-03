@@ -43,6 +43,12 @@ class PostController extends Controller {
 	 */
 	public function store()
 	{
+		// $html = HtmlDomParser::str_get_html(Input::get('content'));
+		// //$imageList = [];
+		// foreach($html as $key => $element){
+		// 	echo $key.' = '.$element. '<br/>';
+		// }
+			
 		$rules = array(
 			'title' => 'required', 
 			'slug' => 'required'

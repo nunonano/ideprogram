@@ -65,6 +65,18 @@ Create New Post
 					</div>
 				</div>
 			</div>
+
+			<!-- # tambah gambar -->
+			<div class="form-group @if($errors->has('thumbnail'))has-error has-feedback @endif">
+				<label>Upload Gambar :</label>
+				<input type="file" class="form-control" name="thumbnail">
+				@if($errors->has('gambar'))
+				<i class="fa fa-exclamation-triangle fa-lg form-control-feedback" style="top: 35px;"></i>
+				<span class="help-block">{{ $errors->first('gambar') }}</span>
+				@endif
+			</div>
+
+
 			<div class="form-group" id="preview_content_wrapper" style="display:none;">
 				<label>Preview Content</label>
 				<input id="inputPreviewImage" type="file" name="preview_image" style="display:none;">

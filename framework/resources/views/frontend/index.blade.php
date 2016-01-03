@@ -22,7 +22,7 @@ class="selected"
 												<div class="post-lft-info">
 													<div class="main-bg">{{ date('d', strtotime($tanggal)) }}<br />{{ date('M', strtotime($tanggal)) }}<br />{{ date('Y', strtotime($tanggal)) }}</div>
 												</div>
-												<img src="{{ asset('assets/images/blog/small/1.jpg') }}" alt="Our Blog post image goes here">
+												<img src="{{ asset('images/preview/'.$post->preview_image) }}" alt="Our Blog post image goes here">
 											</a>
 										</div>
 									    <article class="post-content">
