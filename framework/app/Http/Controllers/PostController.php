@@ -8,6 +8,7 @@ use Input;
 use Auth;
 use Sunra\PhpSimple\HtmlDomParser;
 use App\Libs\Image;
+use Imagecustom;
 
 class PostController extends Controller {
 
@@ -63,12 +64,22 @@ class PostController extends Controller {
 				$input['preview_content'] = "";
 			}else{
 				//Save preview image if custom content enable
-				$previewImage = Input::file('preview_image');
-				if ($previewImage->isValid())
+				$imagesource = Input::file('preview_image');
+				if ($imagesource->isValid())
 				{
-					$previewImageFilename = 'preview_'.date('YmdHis').'.'.$previewImage->getClientOriginalExtension();
-				    $previewImage->move(public_path('images/preview'), $previewImageFilename);
+					$previewImageFilename = 'preview_'.date('YmdHis').'.'.$imagesource->getClientOriginalExtension();
+					$headerImageFilename = 'header_'.date('YmdHis').'.'.$imagesource->getClientOriginalExtension();
+					$preview_image = Imagecustom::make($imagesource)->resize(300, null, function ($constraint) {
+						$constraint->aspectRatio();
+					});
+					$header_image = Imagecustom::make($imagesource)->resize(1170, null, function ($constraint) {
+    					$constraint->aspectRatio();
+					});
+					$preview_image->save('images/preview_image/'.$previewImageFilename);
+					$header_image->save('images/header_image/'.$headerImageFilename);
+
 				    $input['preview_image'] = $previewImageFilename;
+				    $input['header_image'] = $headerImageFilename;
 				}
 			}
 			
@@ -178,18 +189,28 @@ class PostController extends Controller {
 				$input['preview_content'] = "";
 			}else{
 				//Save preview image if custom content enable
-				if(!empty($post->preview_image) && file_exists(public_path('images/preview/'.$post->preview_image))){
-					unlink(public_path('images/preview/'.$post->preview_image));
+				if(!empty($post->header_image) && file_exists(public_path('images/header_image/'.$post->header_image))){
+					unlink(public_path('images/header_image/'.$post->header_image));
 				}
-				$previewImage = Input::file('preview_image');
-				if ($previewImage->isValid())
+				$imagesource = Input::file('preview_image');
+				if ($imagesource->isValid())
 				{
-					$previewImageFilename = 'preview_'.date('YmdHis').'.'.$previewImage->getClientOriginalExtension();
-				    $previewImage->move(public_path('images/preview'), $previewImageFilename);
+					$previewImageFilename = 'preview_'.date('YmdHis').'.'.$imagesource->getClientOriginalExtension();
+					$headerImageFilename = 'header_'.date('YmdHis').'.'.$imagesource->getClientOriginalExtension();
+					$preview_image = Imagecustom::make($imagesource)->resize(300, null, function ($constraint) {
+						$constraint->aspectRatio();
+					});
+					$header_image = Imagecustom::make($imagesource)->resize(1170, null, function ($constraint) {
+    					$constraint->aspectRatio();
+					});
+					$preview_image->save('images/preview_image/'.$previewImageFilename);
+					$header_image->save('images/header_image/'.$headerImageFilename);
+
 				    $input['preview_image'] = $previewImageFilename;
+				    $input['header_image'] = $headerImageFilename;
 				}
 			}
-
+			
 			//Destroy old image for this content
 			$imageList = json_decode($post->images);
 			if(!empty($imageList)){

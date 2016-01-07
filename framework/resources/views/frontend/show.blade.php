@@ -43,13 +43,16 @@ Posting tidak ditemukan | {{ $webSettings->web_title }}
 	$tanggal = $post->created_at;	
 ?>					
 								<div class="blog-posts">
-			                		<div class="post-item fx" data-animate="fadeInLeft">
-										<div class="details-img">
+			                		<div class="post-item fx" data-animate="fadeInLeft">																		
+										<a href="{{ asset('images/header_image/'.$post->header_image) }}" title="Full Image" class="zoom" >	
+										<div class="details-img">	
 											<div class="post-lft-info">
-												<div class="main-bg">{{ date('d M Y', strtotime($tanggal)) }}<span class="tri-col"></span></div>
+													<div class="main-bg">{{ date('d M Y', strtotime($tanggal)) }}<span class="tri-col"></span></div>
 											</div>
-											<img src="{{ asset('assets/images/blog/1.jpg') }}" alt="Our Blog post image goes here">
+												<img src="{{ asset('images/preview_image/'.$post->preview_image) }}" alt="{{ $post->title }}">
+												<div class="img-overlay"></div>
 										</div>
+										</a>
 									    <article class="post-content">
 									        <div class="post-info-container">
 												<h1 class="main-color">{{ $post->title }}</h1>

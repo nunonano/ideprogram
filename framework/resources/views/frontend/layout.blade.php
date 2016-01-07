@@ -24,9 +24,6 @@
 		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
-		<!-- Custom CSS StyleSheets -->
-		<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
-
 		<!--[if lt IE 9]>
 	    	<link rel="stylesheet" href="css/ie.css">
 	    	<script type="text/javascript" src="js/html5.js"></script>
@@ -35,6 +32,9 @@
 		
 		<!-- Skin style (** you can change the link below with the one you need from skins folder in the css folder **) -->
 		<link rel="stylesheet" href="{{ asset('assets/css/skins/default.css') }}">
+
+		<!-- Custom CSS StyleSheets -->
+		<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
 
 

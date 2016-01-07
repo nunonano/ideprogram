@@ -16,19 +16,20 @@ class="selected"
 							    		$tanggal = $post->created_at;
 							    	?>
 			                		<div class="post-item fx" data-animate="fadeInLeft">
+			                		<h2><a class="main-color" href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h2>
 										<div class="post-image">
-											<a href="{{ route('blog.show', $post->slug) }}">
-												<div class="mask"></div>
-												<div class="post-lft-info">
-													<div class="main-bg">{{ date('d', strtotime($tanggal)) }}<br />{{ date('M', strtotime($tanggal)) }}<br />{{ date('Y', strtotime($tanggal)) }}</div>
-												</div>
-												<img src="{{ asset('images/preview/'.$post->preview_image) }}" alt="Our Blog post image goes here">
-											</a>
+												<a href="{{ asset('images/header_image/'.$post->header_image) }}" title="Full Image" class="zoom" >
+													<div class="img-overlay"></div>
+													<div class="post-lft-info">
+														<div class="main-bg">{{ date('d', strtotime($tanggal)) }}<br />{{ date('M', strtotime($tanggal)) }}<br />{{ date('Y', strtotime($tanggal)) }}</div>
+													</div>
+													<img src="{{ asset('images/preview_image/'.$post->preview_image) }}" alt="{{ $post->title }}">
+												</a>
 										</div>
 									    <article class="post-content">
 									        <div class="post-info-container">
 												<div class="post-info">
-													<h2><a class="main-color" href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h2>
+													
 													<ul class="post-meta">
 														<li class="meta-user"><i class="fa fa-user"></i>By: <a href="#">{{ $post->user->display_name }}</a></li>
 														<li class="">Dilihat :{{ $post->view }} x</li>
